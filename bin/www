@@ -1,5 +1,8 @@
 #!/usr/bin/env node
 
+const WebSocket = require('ws');
+//const wss = new WebSocket.Server(WebSocket.ServerOptions, server=server);
+
 /**
  * Module dependencies.
  */
@@ -20,6 +23,7 @@ app.set('port', port);
  */
 
 var server = http.createServer(app);
+const wss = new WebSocket.Server({server:server});
 
 /**
  * Listen on provided port, on all network interfaces.
